@@ -49,9 +49,37 @@ It shows the distance of a random variable from its mean. It is calcualted as
 
 # Program :
 
+![image](https://github.com/MandhakiniA/Mean-and-Variance/assets/150005194/e1c125e1-d4a7-4ffc-97a8-968d69e214bf)
+```
+import numpy as np
+A=[int(i) for i in input().split()]
+B=len(A); M=max(A)
+x=list();f=list()
+for i in range (M+1):
+    c = 0
+    for j in range(B):
+        if A[j]==i:
+            c=c+1
+    f.append(c)
+    x.append(i)
+sf=np.sum(f)
+p=list()
+for i in range(M+1):
+    p.append(f[i]/sf)
+mean=np.inner(x,p)
+EX2=np.inner(np.square(x),p)
+var=EX2-mean**2
+SD=np.sqrt(var)
+print("The Mean arrival rate is %.3f "%mean)
+print("The Variance of arrival from feeder is %.3f "%var)
+print("The Standard deviation of arrival from feeder is %.3F "%SD)
+```
+
 
 
 # Output : 
+![image](https://github.com/MandhakiniA/Mean-and-Variance/assets/150005194/1fc56642-672b-4747-a16b-8134c4c05cdf)
+
 
 # Results :
 The mean and variance of arrivals of objects from feeder using probability distribution are calculated.
